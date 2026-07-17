@@ -1,14 +1,12 @@
-output "virtual_network_name" {
-    description = "The name of the Azure Virtual Network"
-  value = azurerm_virtual_network.vnet.name
+output "vnet_name" {
+  description = "Azure Virtual Network name"
+  value       = azurerm_virtual_network.vnet.name
 }
 
-output "virtual_network_address_space" {
-    description = "The address space of the Azure Virtual Network"
-  value = azurerm_virtual_network.vnet.address_space
-}
-
-output "virtual_network_id" {
-    description = "The ID of the Azure Virtual Network"
+output "vnet_id" {
   value = azurerm_virtual_network.vnet.id
+}
+
+output "vnet_address_space" {
+  value = azurerm_virtual_network.vnet.address_space
 }
