@@ -2,92 +2,128 @@
 
 ## Project Overview
 
-This project demonstrates how to deploy Azure infrastructure using Terraform modules. The current implementation provisions an Azure Resource Group and a Virtual Network using reusable modules. The project is designed following Infrastructure as Code (IaC) best practices and will be extended with additional Azure networking resources.
+This project demonstrates how to deploy Azure infrastructure using reusable Terraform modules following Infrastructure as Code (IaC) best practices.
+
+The deployment includes:
+
+- Resource Group
+- Virtual Network
+- Subnet
+- Network Security Group
+- NSG Association
+- Public IP
+- Network Interface
+- Windows Virtual Machine
+
+The objective of this project is to demonstrate modular Terraform design instead of writing everything inside a single main.tf file.
+
+---
 
 ## Architecture
 
-Architecture diagram will be added soon.
+![Architecture](diagrams/architecture.png)
 
-## Folder Structure
+---
 
-```text
-modules/
-├── resource-group
-└── virtual-network
+## Project Structure
+
+```
+terraform-azure-modular-network-foundation
+│
+├── diagrams
+│   ├── architecture.drawio
+│   └── architecture.png
+│
+├── docs
+│
+├── modules
+│   ├── resource-group
+│   ├── virtual-network
+│   ├── subnet
+│   ├── network-security-group
+│   ├── subnet-nsg-association
+│   ├── public-ip
+│   ├── network-interface-card
+│   └── vm
+│
+├── screenshots
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── providers.tf
+├── versions.tf
+├── terraform.tfvars
+└── README.md
 ```
 
-## Features
-
-- Modular Terraform design
-- Resource Group Module
-- Virtual Network Module
-- Reusable variables
-- Outputs
-- Production-ready folder structure
+---
 
 ## Prerequisites
 
-- Terraform 1.14+
 - Azure Subscription
 - Azure CLI
+- Terraform
+- Visual Studio Code
 
-## Deployment Steps
+---
 
-1. Clone repository
+## Deployment
 
-2. Login to Azure
+Initialize Terraform
 
-3. Initialize Terraform
-
-4. Review Execution Plan
-
-5. Deploy Infrastructure
-
-```bash
+```
 terraform init
+```
+
+Validate
+
+```
+terraform validate
+```
+
+Plan
+
+```
 terraform plan
+```
+
+Deploy
+
+```
 terraform apply
 ```
 
-## Modules
+Destroy Resources
 
-| Module | Purpose |
-|--------|---------|
-| resource-group | Creates Azure Resource Group |
-| virtual-network | Creates Azure Virtual Network |
+```
+terraform destroy
+```
 
-## Inputs
-
-| Variable | Description |
-|----------|-------------|
-| resource_group_name | Name of Resource Group |
-| location | Azure Region |
-| vnet_name | Virtual Network Name |
-| address_space | VNet Address Space |
+---
 
 ## Outputs
 
-| Output | Description |
-|--------|-------------|
-| resource_group_name | Resource Group Name |
-| vnet_name | Virtual Network Name |
+- Resource Group Name
+- Virtual Network Name
+- Subnet Name
+- VM Name
+- Resource IDs
 
-## Future Enhancements
+---
 
-- Add Network Security Groups
-- Add Subnets
-- Add Route Tables
-- Add Azure Firewall
-- Add Bastion Host
-- Add Virtual Machines
-- Add Diagnostic Settings
+## Technologies Used
+
+- Microsoft Azure
+- Terraform
+- AzureRM Provider
+- Git
+- GitHub
+- Visual Studio Code
+
+---
 
 ## Author
 
-**Vitthal Ankush Gawade**
-
+Vitthal Gawade
 Azure Infrastructure Engineer
-
-AZ-104 Certified
-
-Pune, India

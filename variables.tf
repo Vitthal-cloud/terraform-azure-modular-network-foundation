@@ -30,3 +30,43 @@ variable "nsg_name" {
   description = "Name of the Azure Network Security Group"
   type        = string
 }
+
+variable "public_ip_name" {
+  description = "Name of the Azure Public IP"
+  type        = string
+}
+
+variable "network_interface_name" {
+  type = string
+}
+
+variable "private_ip_allocation" {
+  type    = string
+  default = "Dynamic"
+}
+
+variable "vm_name" {
+  description = "Name of the Azure Virtual Machine"
+  type        = string
+}
+
+variable "vm_size" {
+  description = "Size of the Azure Virtual Machine"
+  type        = string
+}
+
+variable "admin_username" {
+  description = "Admin username for the Azure Virtual Machine"
+  type        = string
+}
+
+variable "admin_password" {
+  description = "Admin password for the Azure Virtual Machine"
+  type        = string
+  sensitive   = true
+}
+
+variable "os_disk_name" {
+  description = "Name of the OS disk for the Azure Virtual Machine"
+  type        = string
+}
